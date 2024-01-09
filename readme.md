@@ -22,6 +22,11 @@ ___
 ``` bash
 npm i nodemon
 ```
+теперь для запуска сервера нужно писать не node index.js
+``` bash
+nodemon index.js
+```
+
 
 
 
