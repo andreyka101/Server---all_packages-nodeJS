@@ -26,6 +26,7 @@ npm i nodemon
 ``` bash
 nodemon index.js
 ```
+# nodemon
 
 
 
