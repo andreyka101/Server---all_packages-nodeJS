@@ -26,7 +26,22 @@ npm i nodemon
 ``` bash
 nodemon index.js
 ```
-# nodemon
+# compression
+
+___
+
+описание - compression
+<br/>
+сжимает файлы
+
+___
+
+установка
+
+``` bash
+npm i compression
+```
+потом напишу
 
 
 
