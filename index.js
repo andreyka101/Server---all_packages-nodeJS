@@ -1,6 +1,8 @@
 // загрузка модулей
-const express = require('express')
-const compression = require('compression')
+import express from 'express'
+// const express = require('express')
+import compression from 'compression'
+// const compression = require('compression')
 const app = express()
 
 // включение compression
