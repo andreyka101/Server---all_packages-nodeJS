@@ -1,9 +1,11 @@
+// загрузка модулей
 const express = require('express')
 const compression = require('compression')
-const app = express({strategy:8})
+const app = express()
 
-
-app.use(compression())
+// включение compression
+// почему то не работает
+app.use(compression({strategy:8}))
 
 
 app.use(express.static("static_files"))
