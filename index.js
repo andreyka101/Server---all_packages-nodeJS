@@ -14,7 +14,8 @@ app.use(compression({strategy:3}))
 
 
 // включение cors
-app.use(cors())
+//FIXME - ???
+app.use(cors("http://localhost:1247/"))
 
 
 
