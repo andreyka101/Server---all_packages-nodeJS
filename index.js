@@ -2,6 +2,7 @@
 import express from 'express'
 import compression from 'compression'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 
 
 const app = express()
@@ -19,11 +20,20 @@ app.use(cors("http://localhost:1234/"))
 
 
 
+//REVIEW - включение body-parser
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 
 
+
+
+// пример использования body-parser
 app.post('/data',(req,res)=>{
-  console.log(req.data)
+  console.log(req.body)
   res.send({ok:"сообщение от сервера"})
 })
 

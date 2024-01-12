@@ -65,7 +65,7 @@ npm i cors
 import cors from 'cors'
 ```
 
-использовать cors
+включаем cors
 <br/>
 пишем в верху файла
 
@@ -86,6 +86,8 @@ app.use(cors("http://другой домен/"))
 
 ___
 
+описание - body-parser
+<br/>
 это промежуточная функция которая занимается анализом переданных данных
 
 ___
@@ -100,7 +102,7 @@ npm i body-parser
 import bodyParser from 'body-parser'
 ```
 
-использовать cors
+включаем body-parser
 <br/>
 пишем в верху файла
 
@@ -111,13 +113,55 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 ```
-если хочешь чтоб запросы были только с твоего другого домена , а другие не могли запрашивать 
+теперь сервер видит полученный файл
 <br/>
-тогда в cors() пиши нужный тебе домен
-<br/>
-пример:
+проверка:
 
 ``` bash
-app.use(cors("http://другой домен/"))
+app.post('/data',(req,res)=>{
+  console.log(req.body)
+})
+```
+<!-- ------------------------------------------ -->
+# multer
+
+___
+
+описание - multer
+<br/>
+изменить:
+Multer — это middleware для фреймворка express для обработки multipart/form-data , нужная в первую очередь при загрузке файлов. Написана как обертка над busboy для ее максимально эффективного использования. ВАЖНО: Multer не обрабатывает никакой другой тип форм, кроме multipart/form-data .
+
+___
+
+установка
+
+``` bash
+npm i multer
+```
+подключение модуля
+``` bash
+import bodyParser from 'body-parser'
+```
+
+включаем body-parser
+<br/>
+пишем в верху файла
+
+``` bash
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+```
+теперь сервер видит полученный файл
+<br/>
+проверка:
+
+``` bash
+app.post('/data',(req,res)=>{
+  console.log(req.body)
+})
 ```
 
