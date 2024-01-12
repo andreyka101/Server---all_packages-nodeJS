@@ -11,13 +11,14 @@ const app = express()
 
 //REVIEW - включение compression
 //FIXME - почему то не работает
+// опче ндж
 app.use(compression({strategy:3}))
 
 
 
 //FIXME - ???
 //REVIEW - включение cors
-app.use(cors("http://localhost:1234/"))
+app.use(cors({origin:["http://localhost:5173",'http://127.0.0.1:5173']}))
 
 
 
