@@ -1,4 +1,4 @@
-// подключение модулей
+//ANCHOR - подключение модулей
 import express from 'express'
 import compression from 'compression'
 import cors from 'cors'
@@ -7,31 +7,39 @@ import cors from 'cors'
 const app = express()
 
 
-// включение compression
-// почему то не работает
+//REVIEW - включение compression
+//FIXME - почему то не работает
 app.use(compression({strategy:3}))
 
 
 
 //FIXME - ???
-// включение cors
-app.use(cors("http://localhost:1247/"))
-
+//REVIEW - включение cors
+app.use(cors("http://localhost:1234/"))
 
 
 
 app.use(express.static("static_files"))
 
 
+
+app.post('/data',(req,res)=>{
+  console.log(req.data)
+  res.send({ok:"сообщение от сервера"})
+})
+
+
+
+
+
+
+//TODO - я это не менял (кроме порта)
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
 // http://localhost:3500/A9
 app.get('/A9', function (req, res) {
   res.send('9pip9')
-})
-app.get('/hello/:name', function (req, res) {
-  res.send('hello ' + req.params.name)
 })
 
 
