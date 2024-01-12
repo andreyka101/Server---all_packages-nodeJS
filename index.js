@@ -11,7 +11,7 @@ const app = express()
 
 //REVIEW - включение compression
 //FIXME - почему то не работает
-// опче ндж
+// опаче инджинкс
 app.use(compression({strategy:3}))
 
 
