@@ -129,8 +129,9 @@ ___
 
 описание - multer
 <br/>
-изменить:
-Multer — это middleware для фреймворка express для обработки multipart/form-data , нужная в первую очередь при загрузке файлов. Написана как обертка над busboy для ее максимально эффективного использования. ВАЖНО: Multer не обрабатывает никакой другой тип форм, кроме multipart/form-data .
+Multer — это middleware для фреймворка express для обработки multipart/form-data, нужная в первую очередь при загрузке файлов. Написана как обертка над busboy для ее максимально эффективного использования.
+<br/>
+ВАЖНО: Multer не обрабатывает никакой другой тип форм, кроме multipart/form-data.
 
 ___
 
@@ -141,27 +142,56 @@ npm i multer
 ```
 подключение модуля
 ``` bash
-import bodyParser from 'body-parser'
+import multer from 'multer'
 ```
 
-включаем body-parser
+включаем multer
 <br/>
 пишем в верху файла
 
 ``` bash
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
-app.use(bodyParser.json())
+none
 ```
-теперь сервер видит полученный файл
+none
 <br/>
 проверка:
 
 ``` bash
-app.post('/data',(req,res)=>{
-  console.log(req.body)
-})
+none
+```
+<!-- ------------------------------------------ -->
+# sharp
+
+___
+
+описание - sharp
+<br/>
+создаёт новые ужатые картинки
+
+___
+
+установка
+
+``` bash
+npm i sharp
+```
+подключение модуля
+``` bash
+import multer from 'multer'
+```
+
+включаем multer
+<br/>
+пишем в верху файла
+
+``` bash
+none
+```
+none
+<br/>
+проверка:
+
+``` bash
+none
 ```
 
