@@ -19,7 +19,6 @@ app.use(cors("http://localhost:1234/"))
 
 
 
-app.use(express.static("static_files"))
 
 
 
@@ -34,6 +33,7 @@ app.post('/data',(req,res)=>{
 
 
 //TODO - я это не менял (кроме порта)
+app.use(express.static("static_files"))
 app.get('/', function (req, res) {
   res.send('Hello World')
 })

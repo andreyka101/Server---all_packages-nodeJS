@@ -5,6 +5,7 @@
 ``` bash
 https://github.com/andreyka101/Server---basic-nodeJS-express
 ```
+<!-- ------------------------------------------ -->
 # nodemon
 
 ___
@@ -26,6 +27,7 @@ npm i nodemon
 ``` bash
 nodemon index.js
 ```
+<!-- ------------------------------------------ -->
 # compression
 
 ___
@@ -42,7 +44,7 @@ ___
 npm i compression
 ```
 потом напишу
-
+<!-- ------------------------------------------ -->
 # cors
 
 ___
@@ -69,6 +71,45 @@ import cors from 'cors'
 
 ``` bash
 app.use(cors())
+```
+если хочешь чтоб запросы были только с твоего другого домена , а другие не могли запрашивать 
+<br/>
+тогда в cors() пиши нужный тебе домен
+<br/>
+пример:
+
+``` bash
+app.use(cors("http://другой домен/"))
+```
+<!-- ------------------------------------------ -->
+# body-parser
+
+___
+
+это промежуточная функция которая занимается анализом переданных данных
+
+___
+
+установка
+
+``` bash
+npm i body-parser
+```
+подключение модуля
+``` bash
+import bodyParser from 'body-parser'
+```
+
+использовать cors
+<br/>
+пишем в верху файла
+
+``` bash
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 ```
 если хочешь чтоб запросы были только с твоего другого домена , а другие не могли запрашивать 
 <br/>
