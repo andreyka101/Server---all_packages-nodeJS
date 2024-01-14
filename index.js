@@ -11,14 +11,14 @@ const app = express()
 
 //REVIEW - включение compression
 //FIXME - почему то не работает
-// опаче инджинкс
-app.use(compression({strategy:3}))
+app.use(compression({strategy:8}))
 
 
 
-//FIXME - ???
 //REVIEW - включение cors
-app.use(cors({origin:["http://localhost:5173",'http://127.0.0.1:5173']}))
+app.use(cors())
+// пример запроса только с моего домена
+// app.use(cors({origin:["http://localhost:5173",'http://127.0.0.1:5173']}))
 
 
 
