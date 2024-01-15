@@ -51,7 +51,21 @@ ___
 ``` bash
 npm i compression
 ```
-потом напишу
+включаем compression
+<br/>
+пишем в верху файла
+
+``` bash
+app.use(compression({
+  // сила сжатия (9 max)
+  strategy:1,
+  // Сжимаем HTTP ответы, тело которых длиннее одного байта
+  threshold: 1,
+  // Сжимаем HTTP ответы независимо от их mime-типа
+  filter: function() {return true;},
+})); 
+```
+
 <!-- ------------------------------------------ -->
 # cors
 
@@ -201,7 +215,7 @@ npm i sharp
 import sharp from 'sharp'
 ```
 
-используем multer
+используем sharp
 
 ``` bash
 none

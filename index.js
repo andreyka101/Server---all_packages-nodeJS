@@ -11,10 +11,10 @@ const app = express()
 
 
 //REVIEW - включение compression
-//FIXME - почему то не работает
+//FIXME - почему то не работает strategy
 app.use(compression({
-  // сила сжатия
-  strategy:1,
+  // сила сжатия (9 max)
+  strategy:6,
   // Сжимаем HTTP ответы, тело которых длиннее одного байта
   threshold: 1,
   // Сжимаем HTTP ответы независимо от их mime-типа
