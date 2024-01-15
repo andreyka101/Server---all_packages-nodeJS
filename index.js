@@ -74,6 +74,7 @@ app.post('/file', upload.any() ,(req,res)=>{
 
 
 
+
 //TODO - я это не менял (кроме порта)
 app.use(express.static("static_files"))
 app.get('/', function (req, res) {
