@@ -14,7 +14,7 @@ const app = express()
 //FIXME - почему то не работает strategy
 app.use(compression({
   // сила сжатия (9 max)
-  strategy:6,
+  strategy:2,
   // Сжимаем HTTP ответы, тело которых длиннее одного байта
   threshold: 1,
   // Сжимаем HTTP ответы независимо от их mime-типа
@@ -74,7 +74,6 @@ app.post('/file', upload.any() ,(req,res)=>{
 
 
 
-
 //TODO - я это не менял (кроме порта)
 app.use(express.static("static_files"))
 app.get('/', function (req, res) {
@@ -82,7 +81,7 @@ app.get('/', function (req, res) {
 })
 // http://localhost:3500/A9
 app.get('/A9', function (req, res) {
-  res.send('9pip9')
+  res.send({pip:'9pip9'})
 })
 
 
