@@ -201,9 +201,7 @@ npm i sharp
 import sharp from 'sharp'
 ```
 
-включаем multer
-<br/>
-пишем в верху файла
+используем multer
 
 ``` bash
 none

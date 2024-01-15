@@ -3,6 +3,7 @@ import express from 'express'
 import compression from 'compression'
 import cors from 'cors'
 import bodyParser from 'body-parser'
+//FIXME - спросить про multer
 import multer from 'multer'
 
 
@@ -11,7 +12,14 @@ const app = express()
 
 //REVIEW - включение compression
 //FIXME - почему то не работает
-app.use(compression({strategy:8}))
+app.use(compression({
+  // сила сжатия
+  strategy:1,
+  // Сжимаем HTTP ответы, тело которых длиннее одного байта
+  threshold: 1,
+  // Сжимаем HTTP ответы независимо от их mime-типа
+  filter: function() {return true;},
+})); 
 
 
 
