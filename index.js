@@ -52,7 +52,7 @@ const upload = multer({dest:"receivingFile/"})
 //NOTE -  пример использования body-parser
 app.post('/data',(req,res)=>{
   console.log(req.body)
-  res.send({ok:"сообщение от сервера"})
+  res.send({simpleAnswer:"сообщение от сервера"})
 })
 
 
@@ -81,7 +81,7 @@ app.get('/', function (req, res) {
 })
 // http://localhost:3500/A9
 app.get('/A9', function (req, res) {
-  res.send({pip:'9pip9'})
+  res.send({simpleAnswer:'9pip9'})
 })
 
 
