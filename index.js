@@ -75,6 +75,7 @@ app.post('/file', upload.any() ,(req,res)=>{
 
 
 //TODO - я это не менял (кроме порта)
+// http://localhost:3500/img/110435-iskusstvo-graficeskij_dizajn-svet-krasnyj_cvet-art-1920x1080.jpg
 app.use(express.static("static_files"))
 app.get('/', function (req, res) {
   res.send('Hello World')
