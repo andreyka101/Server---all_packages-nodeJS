@@ -82,7 +82,7 @@ app.get('/', function (req, res) {
 })
 // http://localhost:3500/A9
 app.get('/A9', function (req, res) {
-  res.send({simpleAnswer:'9pip9'})
+  res.send('9pip9')
 })
 
 
