@@ -23,9 +23,13 @@ ___
 ``` bash
 npm i nodemon
 ```
-теперь для запуска сервера нужно писать не node index.js
+теперь в scripts для запуска сервера нужно писать не node index.js
 ``` bash
 nodemon index.js
+```
+теперь в консоле для запуска сервера нужно писать
+``` bash
+npx nodemon index.js
 ```
 <!-- ------------------------------------------ -->
 # compression
