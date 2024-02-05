@@ -3,6 +3,7 @@ import express from 'express'
 import compression from 'compression'
 import cors from 'cors'
 import bodyParser from 'body-parser'
+import fs from 'fs'
 //FIXME - спросить про multer
 import multer from 'multer'
 
@@ -10,7 +11,7 @@ import multer from 'multer'
 const app = express()
 
 
-//REVIEW - включение compression
+//REVIEW - пример работы  compression
 //FIXME - почему то не работает strategy
 app.use(compression({
   // сила сжатия (9 max)
@@ -23,14 +24,14 @@ app.use(compression({
 
 
 
-//REVIEW - включение cors
+//REVIEW - пример работы  cors
 app.use(cors())
 // пример запроса только с моего домена
 // app.use(cors({origin:["http://localhost:5173",'http://127.0.0.1:5173']}))
 
 
 
-//REVIEW - включение body-parser
+//REVIEW - пример работы  body-parser
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -39,10 +40,18 @@ app.use(bodyParser.json())
 
 
 
-//REVIEW - включение multer
+//REVIEW - пример работы  multer
 //FIXME - изменить
 // вся информация в видео
 const upload = multer({dest:"receivingFile/"})
+
+
+
+//REVIEW - пример работы  fs
+// чтение
+const file = fs.readFileSync("./static/data.json" , "utf8")
+console.log("file =" , file)
+
 
 
 
@@ -67,6 +76,10 @@ app.post('/file', upload.any() ,(req,res)=>{
   console.log(req.files)
   res.send({ok:"сообщение от сервера"})
 })
+
+
+
+
 
 
 

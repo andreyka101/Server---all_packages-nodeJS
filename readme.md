@@ -272,6 +272,6 @@ const file = fs.readFileSync("./static/data.json" , "utf8")
 в примере ниже я перезаписываю файл json
 
 ``` js
-fs.writeFileSync("./static/data.json",json.stringify({sd:12}))
+fs.writeFileSync("./static/data.json",JSON.stringify({sd:12}))
 ```
 
