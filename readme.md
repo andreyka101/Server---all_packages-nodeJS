@@ -1,6 +1,6 @@
 # здесь будет представлен список пакетов для сервера
 
-[инструкция как установить сервер](https://github.com/andreyka101/Server---basic-nodeJS-express)
+[инструкция как создать сервер](https://github.com/andreyka101/Server---basic-nodeJS-express)
 <!-- ------------------------------------------ -->
 # nodemon
 
