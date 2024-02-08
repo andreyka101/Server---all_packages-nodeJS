@@ -299,8 +299,7 @@ npm install prisma --save-dev
 npx prisma init
 ```
 
-*примечание*
-<br/>
+*примечание в качестве СУБД я использую PostgreSQL*
 подключение
 <br/>
 в файле .env 
