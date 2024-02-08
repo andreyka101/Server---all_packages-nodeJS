@@ -300,6 +300,9 @@ npx prisma init
 ```
 
 *примечание в качестве СУБД я использую PostgreSQL*
+<br/>
+[если используешь другую СУБД тыкай сюда](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql)
+<br/>
 подключение
 <br/>
 в файле .env 
