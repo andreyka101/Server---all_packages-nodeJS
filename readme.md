@@ -275,3 +275,69 @@ const file = fs.readFileSync("./static/data.json" , "utf8")
 fs.writeFileSync("./static/data.json",JSON.stringify({sd:12}))
 ```
 
+<!-- ------------------------------------------ -->
+# prisma
+
+___
+
+описание - prisma
+<br/>
+она позволяет работать с базой данных в nodeJS
+
+___
+
+
+установка
+
+``` bash
+npm install prisma --save-dev
+```
+
+теперь создаём папку с файлами командой
+
+``` bash
+npx prisma init
+```
+
+*примечание*
+<br/>
+подключение
+<br/>
+в файле .env 
+<br/>
+в глобальной переменной DATABASE_URL ссылку меняем на ссылку вашего СУБД
+
+
+``` bash
+import fs from 'fs'
+```
+
+используем fs:
+<br/>
+открытие файла
+<br/>
+в методе readFileSync пишем :
+<br/>
+1 путь к файлу
+<br/>
+2 формат чтения
+<br/>
+в примере ниже я считываю json
+
+``` js
+const file = fs.readFileSync("./static/data.json" , "utf8")
+```
+перезапись файла
+<br/>
+в методе writeFileSync пишем :
+<br/>
+1 путь к файлу 
+<br/>
+2 текст на который мы хотим перезаписать
+<br/>
+в примере ниже я перезаписываю файл json
+
+``` js
+fs.writeFileSync("./static/data.json",JSON.stringify({sd:12}))
+```
+
