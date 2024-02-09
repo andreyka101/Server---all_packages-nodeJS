@@ -302,7 +302,6 @@ npx prisma init
 можно для удобства скачать расширение Prisma
 <br/>
 <br/>
-<br/>
 
 <!-- [если используешь другую СУБД тыкай сюда](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql) -->
 --подключение--
