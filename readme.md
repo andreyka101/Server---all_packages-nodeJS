@@ -313,7 +313,7 @@ postgresql://СУБД:пароль@localhost:5432/название_базы_да
 ```
 в этой ссылке меняем:
 <br/>
-СУБД = на название твоего СУБД пример ( «*»postgresql«*», mysql, sqlite, sqlserver, mongodb or cockroachdb ) ,
+СУБД = на название твоего СУБД пример ( «postgresql», mysql, sqlite, sqlserver, mongodb or cockroachdb ) ,
 <br/>
 пароль = на пароль твоего СУБД ,
 <br/>
