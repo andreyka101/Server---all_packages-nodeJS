@@ -299,16 +299,25 @@ npm install prisma --save-dev
 npx prisma init
 ```
 
-*!! примечание !! в качестве СУБД я использую PostgreSQL*
-<br/>
-[если используешь другую СУБД тыкай сюда](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql)
-<br/>
-<br/>
+<!-- [если используешь другую СУБД тыкай сюда](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql) -->
 --подключение--
 <br/>
 в файле .env 
 <br/>
-в глобальной переменной DATABASE_URL ссылку меняем на ссылку вашего СУБД
+в глобальной переменной DATABASE_URL ссылку меняем на ссылку из вашего СУБД
+<br/>
+либо пишем эту ссылку
+
+``` bash
+postgresql://СУБД:пароль@localhost:5432/название_базы_данных?schema=public
+```
+в этой ссылке меняем:
+<br/>
+СУБД = на название твоего СУБД пример ( <postgresql>, mysql, sqlite, sqlserver, mongodb or cockroachdb ) ,
+<br/>
+пароль = на пароль твоего СУБД ,
+<br/>
+название_базы_данных = на созданную в СУБД базу данных
 
 
 ``` bash
