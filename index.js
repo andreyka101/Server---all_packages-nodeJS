@@ -4,6 +4,8 @@ import compression from 'compression'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import fs from 'fs'
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 //FIXME - спросить про multer
 import multer from 'multer'
 

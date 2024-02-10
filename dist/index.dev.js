@@ -10,12 +10,15 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
+var _client = require("@prisma/client");
+
 var _multer = _interopRequireDefault(require("multer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 //ANCHOR - подключение модулей
-//FIXME - спросить про multer
+var prisma = new _client.PrismaClient(); //FIXME - спросить про multer
+
 var app = (0, _express["default"])(); //REVIEW - пример работы  compression
 //FIXME - почему то не работает strategy
 
