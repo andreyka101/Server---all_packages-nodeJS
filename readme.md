@@ -339,6 +339,7 @@ const prisma = new PrismaClient()
 <br/>
 после этого в файле schema.prisma который находится в папке prisma
 <br/>
+
 в переменной ```provider``` который находится в ```datasource db``` пишем название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
 
 
