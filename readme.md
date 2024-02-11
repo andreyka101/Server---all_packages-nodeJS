@@ -333,6 +333,16 @@ npx prisma init
 
 в переменной ```provider``` который находится в ```datasource db``` пишем в строке название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
 <br/>
+потом в корне этого же файла создаём модель пример:
+
+``` prisma
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+```
+<br/>
 <br/>
 в файле ts или js (у меня это index.js) пишем в верху
 
