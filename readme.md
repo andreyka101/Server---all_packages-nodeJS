@@ -306,6 +306,8 @@ npx prisma init
 <!-- [если используешь другую СУБД тыкай сюда](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql) -->
 --подключение--
 <br/>
+<br/>
+<br/>
 в файле .env 
 <br/>
 в глобальной переменной DATABASE_URL ссылку меняем на ссылку из вашего СУБД
