@@ -328,6 +328,12 @@ npx prisma init
 название_базы_данных = на созданную в СУБД базу данных
 <br/>
 <br/>
+в файле schema.prisma который находится в папке prisma
+<br/>
+
+в переменной ```provider``` который находится в ```datasource db``` пишем в строке название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
+<br/>
+<br/>
 в файле ts или js (у меня это index.js) пишем в верху
 
 ``` js
@@ -335,12 +341,6 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 ```
 
-<br/>
-<br/>
-в файле schema.prisma который находится в папке prisma
-<br/>
-
-в переменной ```provider``` который находится в ```datasource db``` пишем название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
 
 
 
