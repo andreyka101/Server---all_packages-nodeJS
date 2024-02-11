@@ -313,11 +313,15 @@ npx prisma init
 либо пишем эту ссылку
 
 ``` bash
-postgresql://СУБД:пароль@localhost:5432/название_базы_данных?schema=public
+СУБД://имя:пароль@localhost:5432/название_базы_данных?schema=public
 ```
 в этой ссылке меняем:
 <br/>
+
 СУБД = на название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` ) ,
+<br/>
+
+имя = на имя пользователя СУБД например у меня это ```postgres```
 <br/>
 пароль = на пароль твоего СУБД ,
 <br/>
@@ -326,6 +330,14 @@ postgresql://СУБД:пароль@localhost:5432/название_базы_да
 
 после этого в файле schema.prisma который находится в папке prisma
 <br/>
+<br/>
+в файле ts или js пишем в верху (у меня это index.js)
+
+``` js
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+```
+
 в переменной ```provider``` который находится в ```datasource db``` пишем название твоего СУБД пример выше  
 
 
