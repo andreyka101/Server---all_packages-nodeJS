@@ -333,18 +333,6 @@ npx prisma init
 <br/>
 
 в переменной ```provider``` который находится в ```datasource db``` пишем в строке название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
-<br/>
-создаём модель через prisma (если модели нет)
-<br/>
-корне этого же файла создаём модель пример:
-
-``` prisma
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-}
-```
 
 <br/>
 <br/>
@@ -404,7 +392,7 @@ npx prisma studio
 
 ``` js
 app.get("/prisma/users", async function(req,res){
-  const data = await prisma.ryt.findMany({})
+  const data = await prisma.user.findMany({})
   res.send(data)
 })
 ```
