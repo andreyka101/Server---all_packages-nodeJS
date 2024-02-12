@@ -53,7 +53,29 @@ var upload = (0, _multer["default"])({
 
 var file = _fs["default"].readFileSync("./static/data.json", "utf8");
 
-console.log("file =", file); //NOTE -  пример использования body-parser
+console.log("file =", file); //REVIEW - пример работы  prisma
+// чтение базы данных
+
+app.get("/prisma/users", function _callee(req, res) {
+  var data;
+  return regeneratorRuntime.async(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return regeneratorRuntime.awrap(prisma.user.findMany({}));
+
+        case 2:
+          data = _context.sent;
+          res.send(data);
+
+        case 4:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+}); //NOTE -  пример использования body-parser
 
 app.post('/data', function (req, res) {
   console.log(req.body);

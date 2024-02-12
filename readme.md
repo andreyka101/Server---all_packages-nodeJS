@@ -307,7 +307,6 @@ npx prisma init
 --подключение--
 <br/>
 <br/>
-<br/>
 в файле .env 
 <br/>
 в глобальной переменной DATABASE_URL ссылку меняем на ссылку из вашего СУБД
@@ -330,13 +329,14 @@ npx prisma init
 название_базы_данных = на созданную в СУБД базу данных
 <br/>
 <br/>
-<br/>
 в файле schema.prisma который находится в папке prisma
 <br/>
 
 в переменной ```provider``` который находится в ```datasource db``` пишем в строке название твоего СУБД пример ( ```postgresql```, ```mysql```, ```sqlite```, ```sqlserver```, ```mongodb``` or ```cockroachdb``` )
 <br/>
-потом в корне этого же файла создаём модель пример:
+создаём модель через prisma (если модели нет)
+<br/>
+корне этого же файла создаём модель пример:
 
 ``` prisma
 model User {
@@ -345,44 +345,68 @@ model User {
   name  String?
 }
 ```
+
 <br/>
 <br/>
 в файле ts или js (у меня это index.js) пишем в верху
 
-``` js
+``` bash
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 ```
 
+<br/>
+<br/>
+<br/>
+если нужно взять созданную модель из СУБД то пишем
 
+``` bash
+npx prisma db pull
+```
 
+если же модели нет , тогда создадим её через prisma
+<br/>
+в файле schema.prisma пишем
 
-используем fs:
+``` prisma
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+```
+
+созданную в prisma базу данных отправляем в СУБД (если не создавали то и не нужно писать):
 <br/>
-открытие файла
+это нужно делать каждый раз при изменении модели 
+
+``` bash
+npx prisma db push
+```
+
+теперь можно сгенерировать клиент с помощью команды :
 <br/>
-в методе readFileSync пишем :
+это нужно делать каждый раз при изменении модели 
+
+``` bash
+npx prisma generate
+```
+
+проверяем
+
+``` bash
+npx prisma studio
+```
+
+используем prisma:
 <br/>
-1 путь к файлу
-<br/>
-2 формат чтения
-<br/>
-в примере ниже я считываю json
+чтение базы данных
 
 ``` js
-const file = fs.readFileSync("./static/data.json" , "utf8")
+app.get("/prisma/users", async function(req,res){
+  const data = await prisma.ryt.findMany({})
+  res.send(data)
+})
 ```
-перезапись файла
-<br/>
-в методе writeFileSync пишем :
-<br/>
-1 путь к файлу 
-<br/>
-2 текст на который мы хотим перезаписать
-<br/>
-в примере ниже я перезаписываю файл json
 
-``` js
-fs.writeFileSync("./static/data.json",JSON.stringify({sd:12}))
-```
 

@@ -56,6 +56,15 @@ console.log("file =" , file)
 
 
 
+//REVIEW - пример работы  prisma
+// чтение базы данных
+app.get("/prisma/users", async function(req,res){
+  const data = await prisma.user.findMany({})
+  res.send(data)
+})
+
+
+
 
 
 
