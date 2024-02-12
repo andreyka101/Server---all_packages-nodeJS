@@ -408,7 +408,7 @@ app.get("/prisma/users", async function(req,res){
   res.send(data)
 })
 ```
-будет полезно
+будет полезно :
 
 [шпаргалка для prisma](https://my-js.org/docs/guide/prisma/)
 
