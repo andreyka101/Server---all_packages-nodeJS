@@ -408,8 +408,9 @@ app.get("/prisma/users", async function(req,res){
   res.send(data)
 })
 ```
+будет полезно
+
 [шпаргалка для prisma](https://my-js.org/docs/guide/prisma/)
-  <br/>
 
 [официальный сайт prisma](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases/introspection-typescript-postgresql)
 
