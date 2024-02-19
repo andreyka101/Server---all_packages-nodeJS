@@ -392,7 +392,7 @@ npx prisma studio
 
 ``` js
 app.get("/prisma/users", async function(req,res){
-  const data = await prisma.user.findMany({})
+  const data = await prisma.user.findMany()
   res.send(data)
 })
 ```
